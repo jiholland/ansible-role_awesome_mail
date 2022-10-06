@@ -1,0 +1,17 @@
+---
+galaxy_info:
+  role_name: mail_awesomeness
+  author: Jørn Ivar Holland
+  description: Send motivational qoutes at spesific days during the week to your crew.
+  license: BSD-3-Clause
+  min_ansible_version: '2.9'
+  platforms:
+    - name: EL
+      versions:
+        - '8'
+  galaxy_tags:
+    - mail
+    - teambuilding
+
+
+dependencies: []

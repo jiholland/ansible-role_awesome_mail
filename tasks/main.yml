@@ -1,0 +1,19 @@
+---
+# tasks file for mail_awesomeness
+
+- name: Send awesome stuff to your crew.
+  # noqa loop-var-prefix
+  community.general.mail:
+    secure: "{{ mail_secure }}"
+    port: "{{ mail_port }}"
+    host: "{{ mail_host }}"
+    to: "{{ mail_to }}"
+    from: "{{ mail_from }}"
+    subject: "{{ item.day }} {{ item.quote }}"
+    body: "{{ item.quote }}"
+  when: ansible_facts.date_time.weekday == item.day
+  loop: "{{ random_quote }}"
+  loop_control:
+    label: "{{ item.day }} {{ item.qoute }}"
+  delegate_to: localhost
+  run_once: true

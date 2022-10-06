@@ -1,0 +1,8 @@
+---
+# defaults file for mail_awesomness
+
+mail_secure: try
+mail_port: 25
+mail_host: localhost
+mail_from: ansible@something.com
+mail_to: crew@something.com
