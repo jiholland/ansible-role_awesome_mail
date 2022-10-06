@@ -5,7 +5,7 @@ random_quote:
   - day: Monday
     theme: boost
     quote: "{{ boost_list | random }}"
-  - day: Thursday
+  - day: Wednesday
     theme: wisdom
     quote: "{{ wisdom_list | random }}"
   - day: Friday
