@@ -14,6 +14,6 @@
   when: ansible_facts.date_time.weekday == item.day
   loop: "{{ random_quote }}"
   loop_control:
-    label: "{{ item.day }} {{ item.qoute }}"
+    label: "{{ item.day }} {{ item.quote }}"
   delegate_to: localhost
   run_once: true
