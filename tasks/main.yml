@@ -9,7 +9,7 @@
     host: "{{ mail_host }}"
     to: "{{ mail_to }}"
     from: "{{ mail_from }}"
-    subject: "{{ item.day }} {{ item.quote }}"
+    subject: "{{ item.day }} {{ item.theme }}"
     body: "{{ item.quote }}"
   when: ansible_facts.date_time.weekday == item.day
   loop: "{{ random_quote }}"
