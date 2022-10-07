@@ -1,5 +1,5 @@
 ---
-# defaults file for mail_awesomness
+# defaults file for awesome_mail
 
 mail_secure: try
 mail_port: 25

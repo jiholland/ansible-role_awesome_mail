@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: mail_awesomeness
+  role_name: awesome_mail
   author: Jørn Ivar Holland
   description: Send motivational qoutes at spesific days during the week to your crew.
   license: BSD-3-Clause

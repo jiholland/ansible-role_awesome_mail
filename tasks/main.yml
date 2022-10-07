@@ -1,5 +1,9 @@
 ---
-# tasks file for mail_awesomeness
+# tasks file for awesome_mail
+
+- name: Include vars.
+  ansible.builtin.include_vars:
+    dir: vars
 
 - name: Send awesome stuff to your crew.
   # noqa loop-var-prefix
@@ -15,5 +19,3 @@
   loop: "{{ random_quote }}"
   loop_control:
     label: "{{ item.day }} {{ item.quote }}"
-  delegate_to: localhost
-  run_once: true

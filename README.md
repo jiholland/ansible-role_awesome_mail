@@ -1,5 +1,5 @@
-mail\_awesomeness
-=================
+awesome\_mail
+=============
 
 🙌 Send mail with random motivational qoute or joke at spesific days during the week to your crew.
 
@@ -38,7 +38,7 @@ Example Playbook
       gather_facts: true
 
       roles:
-         - mail_awesomeness
+         - awesome_mail
 
 License
 -------
