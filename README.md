@@ -18,12 +18,6 @@ defaults/main.yml:
 - mail\_from
 - mail\_to
 
-vars/main.yml:
-- random\_quotes
-- boost\_list
-- wisdom\_list
-- fun\_list
-
 Dependencies
 ------------
 
