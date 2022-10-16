@@ -32,5 +32,5 @@
   tags: [never, schedule]
   ansible.builtin.debug:
     msg:
-      - Use command 'crontab -l' to view all cron.
-      - Use command 'crontab -r' to delete all cron.
+      - Use command 'crontab -l' to display the current crontab on standard output.
+      - Use command 'crontab -r' to remove the current crontab.
