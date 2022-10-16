@@ -20,7 +20,7 @@
     label: "{{ item.day }} {{ item.quote }}"
 
 - name: Schedule using cron.
-  tags: [never, cron]
+  tags: [never, schedule]
   ansible.builtin.cron:
     name: Mail awesomeness
     job: "cd {{ playbook_dir }} && ansible-playbook playbook_awesome_mail.yml"
@@ -29,7 +29,7 @@
     state: present
 
 - name: Print info about cron.
-  tags: [never, cron]
+  tags: [never, schedule]
   ansible.builtin.debug:
     msg:
       - Use command 'crontab -l' to view all cron.
