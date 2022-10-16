@@ -6,7 +6,6 @@
     dir: vars
 
 - name: Send awesome stuff to your crew.
-  # noqa loop-var-prefix
   community.general.mail:
     secure: "{{ mail_secure }}"
     port: "{{ mail_port }}"
@@ -19,3 +18,19 @@
   loop: "{{ random_quote }}"
   loop_control:
     label: "{{ item.day }} {{ item.quote }}"
+
+- name: Schedule using cron.
+  tags: [never, cron]
+  ansible.builtin.cron:
+    name: Mail awesomeness
+    job: "cd {{ playbook_dir }} && ansible-playbook playbook_awesome_mail.yml"
+    hour: '9'
+    minute: '0'
+    state: present
+
+- name: Print info about cron.
+  tags: [never, cron]
+  ansible.builtin.debug:
+    msg:
+      - Use command 'crontab -l' to view all cron.
+      - Use command 'crontab -r' to delete all cron.

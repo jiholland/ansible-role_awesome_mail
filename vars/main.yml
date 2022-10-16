@@ -3,8 +3,8 @@
 
 random_quote:
   - day: Monday
-    theme: boost
-    quote: "{{ boost_list | random }}"
+    theme: motivation
+    quote: "{{ motivation_list | random }}"
   - day: Wednesday
     theme: wisdom
     quote: "{{ wisdom_list | random }}"
