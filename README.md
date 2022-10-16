@@ -16,6 +16,8 @@ Role Variables
 - mail\_host
 - mail\_from
 - mail\_to
+- cron\_hour
+- cron\_minute
 
 Dependencies
 ------------
@@ -32,6 +34,8 @@ Example Playbook
 
       roles:
          - awesome_mail
+
+📅 Use tag **schedule** to schedule using cron.
 
 License
 -------

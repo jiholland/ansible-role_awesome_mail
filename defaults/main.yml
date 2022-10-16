@@ -6,3 +6,6 @@ mail_port: 25
 mail_host: localhost
 mail_from: ansible@something.com
 mail_to: crew@something.com
+
+cron_hour: '9'
+cron_minut: '0'
