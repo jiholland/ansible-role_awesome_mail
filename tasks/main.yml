@@ -23,7 +23,7 @@
   tags: [never, schedule]
   ansible.builtin.cron:
     name: Mail awesomeness
-    job: "cd {{ playbook_dir }} && ansible-playbook playbook_awesome_mail.yml"
+    job: cd {{ playbook_dir }} && ansible-playbook playbook_awesome_mail.yml
     hour: "{{ cron_hour }}"
     minute: "{{ cron_minute }}"
     state: present
