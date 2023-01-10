@@ -1,7 +1,7 @@
 awesome\_mail
 =============
 
-🙌 Send mail with random motivational qoute or joke at spesific days during the week to your team.
+📧 Send mail with random motivational qoute or joke at spesific days during the week to your team.
 
 Requirements
 ------------
