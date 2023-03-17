@@ -11,13 +11,14 @@ Requirements
 Role Variables
 --------------
 
-- mail\_secure
-- mail\_port
-- mail\_host
-- mail\_from
-- mail\_to
-- cron\_hour
-- cron\_minute
+- awesome\_mail\_secure
+- awesome\_mail\_port
+- awesome\_mail\_host
+- awesome\_mail\_from
+- awesome\_mail\_to
+- awesome\_mail\_cron\_hour
+- awesome\_mail\_cron\_minute
+- awesome\_mail\_random\_quote
 
 Dependencies
 ------------
