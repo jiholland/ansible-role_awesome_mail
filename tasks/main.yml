@@ -5,32 +5,34 @@
   ansible.builtin.include_vars:
     dir: vars
 
-- name: Send awesome stuff to your crew.
+- name: Send awesome stuff to the crew.
   community.general.mail:
-    secure: "{{ mail_secure }}"
-    port: "{{ mail_port }}"
-    host: "{{ mail_host }}"
-    to: "{{ mail_to }}"
-    from: "{{ mail_from }}"
-    subject: "{{ item.day }} {{ item.theme }}"
-    body: "{{ item.quote }}"
-  when: ansible_facts.date_time.weekday == item.day
-  loop: "{{ random_quote }}"
+    secure: "{{ awesome_mail_secure }}"
+    port: "{{ awesome_mail_port }}"
+    host: "{{ awesome_mail_host }}"
+    to: "{{ awesome_mail_to }}"
+    from: "{{ awesome_mail_from }}"
+    subject: "{{ awesome_mail_item.day }} {{ awesome_mail_item.theme }}"
+    body: "{{ awesome_mail_item.quote }}"
+  when: ansible_facts.date_time.weekday == awesome_mail_item.day
+  loop: "{{ awesome_mail_random_quote }}"
   loop_control:
-    label: "{{ item.day }} {{ item.quote }}"
+    loop_var: awesome_mail_item
+    label: "{{ awesome_mail_item.day }} {{ awesome_mail_item.quote }}"
 
 - name: Schedule using cron.
   tags: [never, schedule]
   ansible.builtin.cron:
     name: Mail awesomeness
     job: cd {{ playbook_dir }} && ansible-playbook playbook_awesome_mail.yml
-    hour: "{{ cron_hour }}"
-    minute: "{{ cron_minute }}"
+    hour: "{{ awesome_mail_cron_hour }}"
+    minute: "{{ awesome_mail_cron_minute }}"
     state: present
 
-- name: Print info about cron.
+- name: Print info about crontabs.
   tags: [never, schedule]
   ansible.builtin.debug:
     msg:
-      - Use command 'crontab -l' to display the current crontab on standard output.
-      - Use command 'crontab -r' to remove the current crontab.
+      - Use command 'crontab -l' to view all cron.
+      - Use command 'crontab -r' to delete all cron.
+    verbosity: 0

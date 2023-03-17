@@ -1,11 +1,22 @@
 ---
 # defaults file for awesome_mail
 
-mail_secure: try
-mail_port: 25
-mail_host: localhost
-mail_from: ansible@something.com
-mail_to: crew@something.com
+awesome_mail_secure: try
+awesome_mail_port: 25
+awesome_mail_host: localhost
+awesome_mail_from: ansible@something.com
+awesome_mail_to: crew@something.com
 
-cron_hour: '9'
-cron_minut: '0'
+awesome_mail_cron_hour: '9'
+awesome_mail_cron_minute: '0'
+
+awesome_mail_random_quote:
+  - day: Monday
+    theme: motivation
+    quote: "{{ awesome_mail_motivation_list | random }}"
+  - day: Wednesday
+    theme: wisdom
+    quote: "{{ awesome_mail_wisdom_list | random }}"
+  - day: Friday
+    theme: fun
+    quote: "{{ awesome_mail_fun_list | random }}"
