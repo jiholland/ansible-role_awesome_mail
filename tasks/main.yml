@@ -12,13 +12,13 @@
     host: "{{ awesome_mail_host }}"
     to: "{{ awesome_mail_to }}"
     from: "{{ awesome_mail_from }}"
-    subject: "{{ awesome_mail_item.day }} {{ awesome_mail_item.theme }}"
-    body: "{{ awesome_mail_item.quote }}"
-  when: ansible_facts.date_time.weekday == awesome_mail_item.day
+    subject: "{{ awesome_mail_item['day'] }} {{ awesome_mail_item['theme'] }}"
+    body: "{{ awesome_mail_item['quote'] }}"
+  when: ansible_facts['date_time']['weekday'] is match awesome_mail_item['day']
   loop: "{{ awesome_mail_random_quote }}"
   loop_control:
     loop_var: awesome_mail_item
-    label: "{{ awesome_mail_item.day }} {{ awesome_mail_item.quote }}"
+    label: "{{ awesome_mail_item['day'] }} {{ awesome_mail_item['quote'] }}"
 
 - name: Schedule using cron.
   tags: [never, schedule]
